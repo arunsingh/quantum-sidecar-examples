@@ -1,0 +1,11 @@
+# core libs
+numpy
+pandas
+scipy
+matplotlib
+grpcio
+# quantum stacks
+cirq==1.2.0
+qiskit==0.46.0
+pyquil==4.2.0
+qcs-api-client==1.8.0
