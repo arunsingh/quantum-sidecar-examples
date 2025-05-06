@@ -57,4 +57,4 @@ class QBMHead(nn.Module):
 
     @staticmethod
     def _quil_template():
-        return "DECLAREro BIT[1]\nH 0\nMEASURE 0 ro[0]
+        return "DECLAREro BIT[1]\nH 0\nMEASURE 0 ro[0]"
