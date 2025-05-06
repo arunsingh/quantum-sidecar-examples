@@ -34,6 +34,16 @@ make docker-push   # multi-arch, tag ghcr.io/arunsingh/qpu-gateway:v0.1.0
 
 ```
 
+## High‑Frequency Trading (Quantum Boltzmann Machine)
+
+```bash
+# Build runtime incl. qiskit
+docker build -t qruntime:hft -f docker/runtime/Dockerfile docker/runtime
+
+export QPU_GATEWAY_HOST=qpu-gateway.quantum:50051
+python -m hft_qbm.notebooks.run_qbm   # or open notebook 02_qbm_hft.ipynb
+```
+
 # prerequisites:
 Docker>23, docker buildx, Go1.22, Python3.11, yq, kubectl, helm, and a Rigetti QCS API key.
 
