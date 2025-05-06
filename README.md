@@ -45,9 +45,9 @@ helm install qpu-gw charts/qpu-gateway \
   --set rigetti.apiSecret=$(cat ~/.qcs/secret)
 
 ```
-# Linkerd mTLS auto‑injects.
+- Linkerd mTLS auto‑injects.
 
-# Redis is deployed as sidecar by default (redis.disabled=false to use external redis).
+- Redis is deployed as sidecar by default (redis.disabled=false to use external redis).
 
 ## Running a Notebook
 ```
