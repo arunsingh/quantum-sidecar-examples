@@ -1,0 +1,10 @@
+setup(
+  name="oilandgas_qaoa",
+  install_requires=[
+     "cirq==1.2.0",
+     "qcs-api-client==1.8.0",
+     "numpy",
+     "grpcio",
+  ],
+  ...
+)

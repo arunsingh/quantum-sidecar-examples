@@ -1,0 +1,15 @@
+global:
+  image:
+    repository: ghcr.io/arunsingh/qpu-gateway
+    tag: v0.1.0
+
+rigetti:
+  apiKey: ""
+  apiSecret: ""
+  sessionCap: 4
+
+redis:
+  enabled: true
+  resources:
+    limits:
+      memory: 2Gi
