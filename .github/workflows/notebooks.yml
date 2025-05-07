@@ -1,0 +1,25 @@
+name: Generate Notebooks
+
+on:
+  push:
+    paths:
+      - "*/scripts/*.py"
+
+jobs:
+  nb:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with: { python-version: "3.11" }
+    - run: |
+        pip install jupytext
+        for f in $(git ls-files | grep scripts); do
+          jupytext --set-kernel python3 --to ipynb $f
+        done
+        git config user.name "bot"
+        git config user.email "bot@noreply"
+        git add **/*.ipynb
+        git commit -m "chore(ci): auto‑update notebooks" || true
+        git push
