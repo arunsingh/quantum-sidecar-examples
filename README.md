@@ -44,6 +44,21 @@ export QPU_GATEWAY_HOST=qpu-gateway.quantum:50051
 python -m hft_qbm.notebooks.run_qbm   # or open notebook 02_qbm_hft.ipynb
 ```
 
+## Redistricting Optimiser (VQE) : patching graph utils
+
+```
+pip install -e policy_vqe
+python - <<'PY'
+from policy_vqe.graph_utils import counties_to_graph
+from policy_vqe.vqe import RedistrictVQE
+G = counties_to_graph(['A','B','C'], [('A','B'),('B','C')])
+solver = RedistrictVQE(G)
+print(solver.optimise())
+PY
+
+```
+
+
 # prerequisites:
 Docker>23, docker buildx, Go1.22, Python3.11, yq, kubectl, helm, and a Rigetti QCS API key.
 
