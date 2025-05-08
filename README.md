@@ -46,6 +46,8 @@ out = submit_via_gateway(prog, syms, vals, shots=1024)
 print(out)
 PY
 # If QPU_GATEWAY_HOST is unset, you’ll get a Cirq-simulated result; set the env and it will route through the gateway 
+
+#rebuild images so that at runtime already `cirq` is installed
 ```
 
 ## High‑Frequency Trading (Quantum Boltzmann Machine)
@@ -114,6 +116,27 @@ Enjoy hybrid quantum + GPU optimisation! 🎉
 | `hft_qbm`              | Qiskit QBM package & notebook           |
 | `policy_vqe`           | PyQuil VQE package & notebook           |
 
+
+## Improvising Automation: Auto‑Generate Notebooks with Jupytext
+
+Each time you push a script change, CI converts it into a fresh notebook and commits it back to `main`.
+Pros:
+
+- Notebooks always runnable (cells = script blocks).
+
+- Diff‑friendly—changes appear in .py, not enormous JSON blobs.
+
+- You never hand‑edit .ipynb; the pipeline does.
+
+ Summary
+
+- Production logic now lives in plain Python scripts—version‑control‑friendly.
+
+- Notebooks are auto‑generated; zero hand‑edited JSON noise.
+
+- CI keeps everything up‑to‑date and executable.
+
+- Add, commit, push repo stays clean, notebooks stay fresh, and cluster workloads remain reproducible.
 
 ## Security & Compliance
 
