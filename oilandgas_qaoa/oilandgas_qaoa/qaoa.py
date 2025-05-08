@@ -34,6 +34,14 @@ Both paths return a dictionary:
 
 ```
 
+| Topic                 | Detail                                                                                                                                                                               |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Parameter Mapping** | Quil placeholders are literal `theta[0]`, `theta[1]`, …; `submit_via_gateway` packages them into the `params` map expected by the gateway.                                           |
+| **Local Fallback**    | Uses **Cirq’s** `DensityMatrixSimulator` so offline developers (or CI) can still execute the pipeline without Rigetti credentials.                                                   |
+| **Return Type**       | A `@dataclass` (`QuilResult`) for readability; plain `dict` in JSON-serialisable form.                                                                                               |
+| **Minimal Parser**    | `_submit_local` includes a tiny, *non-robust* translator from a subset of Quil to Cirq gates—good enough for demo, but feel free to swap in `qcel` or `cirq-rigetti` for production. |
+
+
 """
 
 from __future__ import annotations
