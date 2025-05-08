@@ -1,0 +1,4 @@
+cirq==1.2.0
+qcs-api-client==1.8.0
+numpy
+grpcio
