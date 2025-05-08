@@ -34,6 +34,20 @@ make docker-push   # multi-arch, tag ghcr.io/arunsingh/qpu-gateway:v0.1.0
 
 ```
 
+## How to test Quickly : Oil and Gas QAOA Search Space Optimisation
+
+```bash
+python - <<'PY'
+from oilandgas_qaoa.qaoa import build_circuit, submit_via_gateway
+prog, syms = build_circuit(layers=2, n_qubits=4)
+vals = [0.3, 0.7, 1.2, 2.4]
+print("running locally…")
+out = submit_via_gateway(prog, syms, vals, shots=1024)
+print(out)
+PY
+# If QPU_GATEWAY_HOST is unset, you’ll get a Cirq-simulated result; set the env and it will route through the gateway 
+```
+
 ## High‑Frequency Trading (Quantum Boltzmann Machine)
 
 ```bash
